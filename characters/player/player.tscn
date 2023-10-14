@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://2jj1slqmranr"]
+
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_mwfp8"]
+[ext_resource type="Material" uid="uid://nafko07dmw2c" path="res://assets/materials/green.tres" id="2_vs0pa"]
+[ext_resource type="Material" uid="uid://ck3ubqi3uybgf" path="res://assets/materials/black.tres" id="3_145nx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xk68g"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vrydg"]
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("1_mwfp8")
+metadata/_edit_group_ = true
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Model" type="Node3D" parent="Pivot"]
+
+[node name="CapsuleBody" type="MeshInstance3D" parent="Pivot/Model"]
+mesh = SubResource("CapsuleMesh_xk68g")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("2_vs0pa")
+
+[node name="CapsuleEyes" type="MeshInstance3D" parent="Pivot/Model"]
+transform = Transform3D(0.389, 0, 0, 0, 0.15, 0, 0, 0, 0.43, 0, 0.5, -0.5)
+mesh = SubResource("CapsuleMesh_xk68g")
+skeleton = NodePath("../CapsuleBody")
+surface_material_override/0 = ExtResource("3_145nx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_vrydg")

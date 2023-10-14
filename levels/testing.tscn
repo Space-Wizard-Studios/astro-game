@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4feeqims2ttc"]
+
+[ext_resource type="PackedScene" uid="uid://2jj1slqmranr" path="res://characters/player/player.tscn" id="1_fhi0f"]
+
+[node name="Level" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_fhi0f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 10, 0)
+shadow_enabled = true
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(16, 1, 16)
+
+[node name="Marker3D" type="Marker3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Marker3D"]
+transform = Transform3D(1, 6.15348e-15, -3.55272e-15, 0, 0.5, 0.866025, 7.10543e-15, -0.866025, 0.5, 0, 10, 8)
