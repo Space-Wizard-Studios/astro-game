@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://2jj1slqmranr"]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource type="Script" path="res://scripts/PlayerMovement.cs" id="1_wj1qr"]
-[ext_resource type="Material" uid="uid://nafko07dmw2c" path="res://assets/materials/green.tres" id="2_vs0pa"]
-[ext_resource type="Material" uid="uid://ck3ubqi3uybgf" path="res://assets/materials/black.tres" id="3_145nx"]
+[ext_resource type="Script" path="res://characters/player/PlayerController.cs" id="1_7jo80"]
+[ext_resource type="Material" uid="uid://nafko07dmw2c" path="res://common/materials/green.tres" id="2_xdkti"]
+[ext_resource type="Material" uid="uid://ck3ubqi3uybgf" path="res://common/materials/black.tres" id="3_u1udd"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xk68g"]
 
@@ -10,7 +10,7 @@
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_wj1qr")
+script = ExtResource("1_7jo80")
 metadata/_edit_group_ = true
 
 [node name="Pivot" type="Node3D" parent="."]
@@ -20,13 +20,13 @@ metadata/_edit_group_ = true
 [node name="CapsuleBody" type="MeshInstance3D" parent="Pivot/Model"]
 mesh = SubResource("CapsuleMesh_xk68g")
 skeleton = NodePath("../../..")
-surface_material_override/0 = ExtResource("2_vs0pa")
+surface_material_override/0 = ExtResource("2_xdkti")
 
 [node name="CapsuleEyes" type="MeshInstance3D" parent="Pivot/Model"]
 transform = Transform3D(0.389, 0, 0, 0, 0.15, 0, 0, 0, 0.43, 0, 0.5, -0.5)
 mesh = SubResource("CapsuleMesh_xk68g")
 skeleton = NodePath("../CapsuleBody")
-surface_material_override/0 = ExtResource("3_145nx")
+surface_material_override/0 = ExtResource("3_u1udd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_vrydg")

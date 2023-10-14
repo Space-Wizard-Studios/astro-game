@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class PlayerMovement : CharacterBody3D
+public partial class PlayerController : CharacterBody3D
 {
 	[Export]
 	public int Speed { get; set; } = 14;
