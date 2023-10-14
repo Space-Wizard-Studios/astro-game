@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://2jj1slqmranr"]
 
-[ext_resource type="Script" path="res://scripts/Player.cs" id="1_mwfp8"]
+[ext_resource type="Script" path="res://scripts/PlayerMovement.cs" id="1_wj1qr"]
 [ext_resource type="Material" uid="uid://nafko07dmw2c" path="res://assets/materials/green.tres" id="2_vs0pa"]
 [ext_resource type="Material" uid="uid://ck3ubqi3uybgf" path="res://assets/materials/black.tres" id="3_145nx"]
 
@@ -10,7 +10,7 @@
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("1_mwfp8")
+script = ExtResource("1_wj1qr")
 metadata/_edit_group_ = true
 
 [node name="Pivot" type="Node3D" parent="."]
